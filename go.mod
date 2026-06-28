@@ -1,4 +1,4 @@
-module spotsync-backend
+module spotSync-golang-Project
 
 go 1.26.3
 
