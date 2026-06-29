@@ -58,8 +58,8 @@ graph TD
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/spotsync-golang-project.git
-cd spotsync-golang-project
+git clone https://github.com/riya1689/SpotSync-Golang-project.git
+cd SpotSync-Golang-project
 ```
 
 ### 2. Environment Variables
