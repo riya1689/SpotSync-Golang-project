@@ -54,6 +54,20 @@ func main() {
 	e.Use(echoMiddleware.Recover())
 	e.Use(echoMiddleware.CORS())
 
+	// Root Route / Health Check
+	e.GET("/", func(c echo.Context) error {
+		sqlDB, err := config.DB.DB()
+		dbStatus := "Connected"
+		if err != nil || sqlDB.Ping() != nil {
+			dbStatus = "Disconnected"
+		}
+		return c.JSON(200, map[string]interface{}{
+			"success": true,
+			"message": "Welcome to SpotSync API",
+			"database_status": dbStatus,
+		})
+	})
+
 	// API Group
 	api := e.Group("/api/v1")
 
